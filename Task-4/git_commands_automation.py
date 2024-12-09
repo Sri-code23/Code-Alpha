@@ -39,6 +39,7 @@ class GitAutomation:
     def delete_branch(self, branch_name):
         subprocess.run(['git', 'branch', '-d', branch_name], cwd=self.repo_path)
 
+
 def main():
     repo_path = '/path/to/your/repo'
     git_automation = GitAutomation(repo_path)
@@ -86,9 +87,19 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
+class write_commands_using_os:
+    def __init__(self,name):
+        print(f"welcome ...{name}")
+        comm=input("enter the command to be excuted: ")
+        self.execute_command(comm)
+    
+    def execute_command(self,command):
+        os.system(command)
+
 
 if __name__ == "__main__":
-    cdo=GitAutomation()
+    """cdo=GitAutomation()
     cdo.cd()
-    cdo.popen_method()
+    cdo.popen_method()"""
     
+    command_obj=write_commands_using_os("sri")
